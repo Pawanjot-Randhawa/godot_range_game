@@ -1,0 +1,192 @@
+[gd_scene load_steps=14 format=3 uid="uid://f012ukm1d4eg"]
+
+[ext_resource type="Script" uid="uid://4ol81d64syot" path="res://pivot.gd" id="1_d1wn1"]
+[ext_resource type="Script" uid="uid://c8hxy6s52lytd" path="res://v_box_container.gd" id="2_d1wn1"]
+[ext_resource type="AudioStream" uid="uid://l67217ixfm7k" path="res://music/Flying Gorilla - Menu Theme.mp3" id="3_25bwp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+albedo_color = Color(0.627451, 0.698039, 0.376471, 1)
+metallic = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
+albedo_color = Color(0.356863, 0.494118, 0.780392, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_color = Color(1, 0, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+albedo_color = Color(0.254902, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_color = Color(0.996078, 0.294118, 0.0235294, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+albedo_color = Color(0.831373, 1, 0.901961, 1)
+metallic = 0.59
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_color = Color(0.317647, 0.721569, 0.309804, 1)
+metallic = 1.0
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(80, 1, 100)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3631, 2.20431, 0)
+use_collision = true
+size = Vector3(14.1543, 4, 1)
+material = SubResource("StandardMaterial3D_h2yge")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 1.5, -16.5)
+size = Vector3(6, 4, 10)
+material = SubResource("StandardMaterial3D_1bvp3")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 4, -16.5)
+size = Vector3(6, 7, 10)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 4, -6)
+size = Vector3(6, 7, 11)
+material = SubResource("StandardMaterial3D_lquwl")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3, 18.5)
+size = Vector3(6, 7, 16)
+material = SubResource("StandardMaterial3D_5vw27")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.5, 18.5)
+operation = 2
+size = Vector3(6, 6, 8)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4316, 6.77797, -11.5)
+operation = 2
+size = Vector3(7, 3, 10)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5007, 1, -11.0218)
+size = Vector3(2, 1, 21)
+material = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 5.11938, -38.5)
+size = Vector3(2, 9.23877, 2)
+material = SubResource("StandardMaterial3D_272bh")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1273, 3.52083, -33.6664)
+size = Vector3(2.72754, 6, 6.27637)
+material = SubResource("StandardMaterial3D_272bh")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2365, 3.52083, 7.33357)
+size = Vector3(8, 6, 6.27637)
+material = SubResource("StandardMaterial3D_272bh")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2365, 3.52083, 11.9718)
+size = Vector3(8, 6, 3)
+material = SubResource("StandardMaterial3D_272bh")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5051, 3.5, -23.4308)
+size = Vector3(1.70557, 6, 2)
+material = SubResource("StandardMaterial3D_272bh")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2, 12.5)
+size = Vector3(13, 3, 26)
+material = SubResource("StandardMaterial3D_kek77")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.5, -4.5)
+size = Vector3(13, 2, 8)
+material = SubResource("StandardMaterial3D_kek77")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, -12.5)
+size = Vector3(13, 1, 8)
+material = SubResource("StandardMaterial3D_kek77")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -8.5)
+size = Vector3(13, 1, 16)
+material = SubResource("StandardMaterial3D_kek77")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0044, 1.5, 12.3948)
+size = Vector3(13, 2, 26)
+material = SubResource("StandardMaterial3D_kek77")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 4, 11.5)
+operation = 2
+size = Vector3(4, 7, 4)
+
+[node name="Pivot" type="Node3D" parent="."]
+script = ExtResource("1_d1wn1")
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 21, 57)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -79.0
+offset_right = 152.5
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+script = ExtResource("2_d1wn1")
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_25bwp")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer" method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer" method="_on_quit_button_pressed"]

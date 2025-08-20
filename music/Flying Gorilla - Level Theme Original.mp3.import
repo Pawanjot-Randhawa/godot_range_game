@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xfum7dn85vrl"
+path="res://.godot/imported/Flying Gorilla - Level Theme Original.mp3-1cedeb0510cdfe05127ec8860af980bb.mp3str"
+
+[deps]
+
+source_file="res://music/Flying Gorilla - Level Theme Original.mp3"
+dest_files=["res://.godot/imported/Flying Gorilla - Level Theme Original.mp3-1cedeb0510cdfe05127ec8860af980bb.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
