@@ -5,7 +5,6 @@ const STARTINGMENU = preload("res://startingmenu.tscn")
 @onready var crosshair = $UI/TextureRect
 @onready var escape_menu: Control = $UI/EscapeMenu
 @onready var escape_menu_buttons: VBoxContainer = $UI/EscapeMenu/EscapeMenuButtons
-@onready var check_box: CheckBox = $UI/EscapeMenu/EscapeMenuButtons/CheckBox
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var tween
